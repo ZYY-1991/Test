@@ -16,7 +16,7 @@ extern pthread_mutex_t tmp_mutex;
 int get_server_info(short *);
 //创建socket并监听  参数：端口,监听数量  返回值：成功 描述符 失败 -1
 int create_socket(short, int);
-//主要业务  参数：端口,链表地址
+//主要业务  参数：描述符,链表地址
 void server_stu_trans(int, stu_link *);
 //写入文件
 void server_write_file(stu_link *);
