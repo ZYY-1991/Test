@@ -65,11 +65,9 @@ int link_insert(stu_link *p_link, int num, student *stu){
         return 0;
     }
     p_node->id = num;
-    p_node->stu.shscore = stu->shscore;
-    p_node->stu.age = stu->age;
-    p_node->stu.name[NAME_SIZE] = stu->name[NAME_SIZE];
+    p_node->stu = *stu;
     p_node->p_next = NULL;
-    for(p_tmp = &(p_link->head);p_node != &(p_link->tail);p_node = p_node->p_next){
+    for(p_tmp = &(p_link->head);p_tmp != &(p_link->tail);p_tmp = p_tmp->p_next){
         node *p_first = p_tmp;
         node *p_mid = p_first->p_next;
         node *p_last = p_mid->p_next;
