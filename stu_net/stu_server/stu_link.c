@@ -1,5 +1,6 @@
 #include "stu_types.h"
 #include <stdlib.h>
+
 //初始化
 void link_init(stu_link *p_link){
     p_link->head.p_next = &(p_link->tail);
