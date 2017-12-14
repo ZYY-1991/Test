@@ -71,7 +71,7 @@ int link_insert(stu_link *p_link, int num, student *stu){
         node *p_first = p_tmp;
         node *p_mid = p_first->p_next;
         node *p_last = p_mid->p_next;
-        if(p_mid != &(p_link->tail)||p_mid->id > num){
+        if(p_mid == &(p_link->tail)||p_mid->id > num){
             p_node->p_next = p_mid;
             p_first->p_next = p_node;
             return 1;
