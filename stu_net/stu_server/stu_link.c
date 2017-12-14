@@ -88,7 +88,7 @@ int link_delete(stu_link *p_link, int num){
         node *p_first = p_tmp;
         node *p_mid = p_first->p_next;
         node *p_last = p_mid->p_next;
-        if(p_mid != &(p_link->tail)||p_mid->id==num){
+        if(p_mid != &(p_link->tail) && p_mid->id==num){
             p_first->p_next = p_mid->p_next;
             free(p_mid);
             p_mid = NULL;
@@ -107,12 +107,12 @@ node *link_next(stu_link *p_link){
         return NULL;
     }
     p_link->p_cur = p_link->p_cur->p_next;
-    if(p_link->p_cur== &(p_link->head)){
+    if(p_link->p_cur== &(p_link->tail)){
         p_link->p_cur = NULL;
         return p_link->p_cur;
     }
     else{
-        return p_link->p_cur->p_next;
+        return p_link->p_cur;
     }
     
 }
